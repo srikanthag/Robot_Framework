@@ -1,0 +1,232 @@
+1. What are the features of the robot framework
+** Tabular structure is used for test cases: The test cases in the Robot framework are defined in a simple tabular
+manner using keywords. A new developer may easily comprehend and write test cases.
+
+** Keywords: Built-in keywords are accessible with Robot Framework, as well as keywords from libraries such as
+the Selenium Library (open browser, close browser, maximize browser, etc.).
+
+** We can also make user-defined keywords out of a mix of other user-defined keywords,
+built-in keywords, and library keywords. We can even pass parameters to such keywords,
+turning user-defined keywords into reusable functions.
+
+** Variables: Variables such as scalar, list, and dict are supported by the Robot framework.
+Variables in the robot framework are simple to utilize and come in handy when constructing complicated test cases.
+
+** Libraries: External libraries such as SeleniumLibrary, DatabaseLibrary, FTPLibrary, and httpLibrary are all
+supported by the Robot framework. SeleniumLibrary is widely used because it allows users to interact
+with browsers and aids in web application and user interface testing.
+The Robot framework provides its own built-in libraries for strings, dates, and integers, among other things.
+
+** Resources: Externally imported robot files with keywords can now be utilized with test cases thanks to the
+Robot Framework. The resources are simple to utilize and come in handy when we need to use keywords that
+have previously been written for other test projects.
+
+** Test cases based on data: The Robot framework supports both keyword-driven and data-driven test scenarios.
+Data-driven testing uses a high-level keyword as a template for the test suite, and test cases are used to
+communicate data with the template's high-level keyword. It simplifies the process of testing user interfaces
+with various inputs.
+
+** Logs and Reports: In the form of reports and logs, the Robot framework offers all of the data of the test suite
+and test case execution. The log file contains all of the test case's execution details.
+
+===================================================================================================
+
+2. What are the benefits of using the Robot Framework?
+
+** Test cases with a tabular syntax that are simple to read and manage
+** Support for data and keyword driven testing
+** Support for a variety of test libraries and frameworks, such as Selenium, Appium, and REST APIs
+** The ability to integrate with various tools and platforms
+** Detailed and customizable test reports
+===================================================================================================
+
+3. What are the names of all the file formats that the Robot framework supports?
+.robot
+
+==================================================================================================
+
+4. What are the different types of variables in the context of the robot framework?
+a. Scalar Variables: Scalar variables are those that only store a single value, such a text or an integer.
+*** Test Cases ***
+Constants
+   Log    Hello
+   Log    Hello, world!!
+Variables
+   Log    ${GREET}
+   Log    ${GREET}, ${NAME}!!
+
+b. List Variables: Variables with a list of values, such as a list of characters or a list of numbers, are referred to as
+list variables.
+
+*** Test Cases ***
+Constants
+   Login    user    password
+List Variable
+   Login    @{CREDENTIALS}
+
+@{CREDENTIALS}  [‘user’, ‘password’]
+
+c. Dictionary Variables: Similar to a Python dictionary, these variables store a key-value mapping.
+*** Test Cases ***
+Constants
+   Login    user=user1    password=password1
+Dict Variable
+   Login    &{CREDENTIALS}
+
+==================================================================================================
+
+5. What are the different types of test libraries in Robot Framework?
+
+* Built-in libraries: These are preconfigured libraries that are a part of the Robot Framework and offer keywords for
+typical activities like file manipulation, text manipulation, and HTTP requests.
+* Standard libraries: These third-party libraries are integrated with the Robot Framework and provide significant
+keywords for activities like database testing, GUI testing, and network testing.
+* Custom libraries: These are created by the user and offer keywords for specific tasks or APIs.
+
+==================================================================================================
+
+6. Explain the overall architecture of Robot Framework.
+
+* Test cases: These describe the expected behavior of the system being tested and are written in a tabular
+format using keywords.
+* Test libraries: These offer the functionalities required to carry out operations on the system being tested.
+They can be created in any language that supports the Remote Library Interface, including Python, Java, and others.
+* Interpreter for the Robot Framework: This component interprets the test cases, runs the keywords,
+and interacts with the test libraries.
+* Test execution environment: This is the environment in which the test cases are run.
+It could be a local computer or a remote server.
+
+==================================================================================================
+
+7. What are the different configuration files used by Robot Framework?
+Following are the configuration files that Robot Framework uses:
+
+* Settings file: The log level and output directory are two settings for the test execution environment that are
+specified in this file.
+* Variable file: The variables used in the test cases and test suites are defined in this file.
+* Resource file: The resources utilized by the test cases and test suites, such as external libraries and additional
+test cases, are defined in the resource file.
+
+==================================================================================================
+
+8. How do you create custom keywords in Robot Framework?
+When using Robot Framework, you can define a function in a Java or Python library and import the library into
+the test case.
+
+Python Library:
+
+def my_keyword(arg1, arg2):
+    # do something
+
+| Test Case | My Test Case |
+|    | My Keyword | arg1 | arg2
+
+==================================================================================================
+
+9. How do you execute a test case in Robot Framework?
+robot my_test_case.robot
+
+==================================================================================================
+
+10. How do you generate a test report in Robot Framework?
+robot --report my_report.html my_test_case.robot
+
+==================================================================================================
+
+11. How do you run a subset of test cases in Robot Framework?
+robot --test test_case_1,test_case_2 my_test_cases.robot
+
+==================================================================================================
+
+12. How do you handle errors and exceptions in Robot Framework test cases?
+Robot Framework includes built-in keywords like "Run Keyword And Ignore Error" and "Run Keyword And Expect Error"
+that can be used to handle errors and exceptions.
+When a keyword is run with the "Run Keyword And Ignore Error" option, the test execution continues even if the
+keyword fails.
+When the "Run Keyword And Expect Error" option is used, a specific error is expected and the test case fails if it
+doesn't occur.
+The "Run Keyword If Test Failed" and "Run Keyword If Test Passed" keywords allow users to run particular
+keywords based on the test status by creating custom exception handlers.
+By enabling robust error handling in test cases, these techniques help testers locate and successfully resolve issues.
+
+==================================================================================================
+
+13. How do you integrate Robot Framework with Selenium WebDriver?
+The SeleniumLibrary library can be used to integrate Robot Framework with Selenium WebDriver.
+
+| Test Case | My Test Case |
+|    | Open Browser | http://www.google.com | chrome |
+|    | Input Text | name=q | Robot Framework |
+|    | Click Button | name=btnK |
+|    | Wait Until Page Contains | Robot Framework |
+
+
+Login test
+    open browser   ${url}   ${browser}
+    maximize browser window
+    login_to_application
+    close browser
+
+==================================================================================================
+
+14. How do you integrate Robot Framework with Jenkins?
+You can use the Robot Framework Jenkins plugin to combine Robot Framework with Jenkins. Below is an instance:
+
+Install the Robot Framework Jenkins plugin.
+The Robot Framework plugin can be used to create new Jenkins jobs.
+Set up the job to run your test cases.
+
+==================================================================================================
+
+15. How do you integrate Robot Framework with REST APIs?
+RequestsLibrary is a library that may be used to combine Robot Framework with REST APIs. Below is an example:
+
+==================================================================================================
+
+16. What is the difference between suite setup and test setup in Robot Framework?
+In the simplest terms possible, a suite setup runs exactly once at the start of a suite. A test setup runs at the
+start of a test case. If you define a test setup in the settings section of the suite, it will run at the start of each
+test in the suite
+
+==================================================================================================
+
+17. What is test teardown in Robot Framework?
+test teardown is executed after a test case
+
+==================================================================================================
+
+18. Test setup and teardown
+Robot Framework has similar test setup and teardown functionality as many other test automation frameworks.
+In short, a test setup is something that is executed before a test case, and a test teardown is executed after a test
+case. In Robot Framework setups and teardowns are just normal keywords with possible arguments.
+
+For suit setup
+Test Setup       Open Application    App A
+Test Teardown    Close Application
+
+For test setup
+Setup
+Teardown
+
+=================================================================================================
+
+19. What is test timeout in Robot Framework?
+Robot Framework allows you to set timeouts both for test cases and user keywords, and if a test or keyword
+is not finished within the specified time, the keyword that is currently being executed is forcefully stopped.
+
+=================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
