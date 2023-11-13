@@ -1,0 +1,50 @@
+A typical Robot Framework project has the following file structure:
+
+
+Library Folder - contains custom keyword libraries.
+Resources Folder – contains the reusable Robot code files.
+Results Folder – contains the executed test results. (log.html, output.xml and report.html)
+Tests Folder – contains the Robot tests.
+Variable Folder - Contain Variables file and Yamal file (Stored instance data, URLs, username, passwords, ect)
+
+TEST SCRIPTS
+Robot Framework test scripts are text files with the *.robot or *.txt extensions. The four sections of basic Robot test scripts are setting, variables, keywords, and test cases.
+
+SETTINGS
+The settings section contains the import statements for the external libraries, resources, and the setup and teardown commands. (Eg. Library     SeleniumLibrary)
+
+
+
+VARIABLES
+The variables section contains keyword arguments, global, and local values. Variables make it easy to change the test data in one location.
+
+KEYWORDS
+The keywords section contains operations used to execute the tests. The different types of keywords are built-in keywords, library keywords, and user-defined keywords. Built-in and library keywords are lower-level keywords defined by the built-in Robot Framework library or an external library such as Selenium. User-defined keywords are keywords created by combining library keywords.
+
+TEST CASES
+The test cases section contains the test cases.
+
+
+TAGS
+Tags are a way of classifying test cases. Tags in the test case section are in brackets. Commonly used tags are:
+
+[Arguments] - Specify numeric or string arguments {my_argument}
+Documentation - A description of the test
+[Tags] - Type of test – Smoke
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

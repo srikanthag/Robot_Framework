@@ -216,10 +216,12 @@ is not finished within the specified time, the keyword that is currently being e
 
 =================================================================================================
 
+20. SeleniumLibrary is a web testing library for Robot Framework that utilizes the Selenium tool internally.
 
+=================================================================================================
 
-
-
+21. UIAutomatorViewer
+the UIAutomatorViewer is a tool you can use to inspect and analyze the UI components of an Android application. It is a graphic interface that allows you to see the app that's running and dissect the hierarchy of views so you can identify elements that can be interacted with it
 
 
 
