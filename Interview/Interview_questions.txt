@@ -254,5 +254,20 @@ the UIAutomatorViewer is a tool you can use to inspect and analyze the UI compon
 YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents. YAML is a popular programming language because it is designed to be easy to read and understand.3
 
 
+24. Headless browser mode in Robot framework
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${BROWSER}       Firefox
+${FIREFOX_OPTIONS}    --headless    # Firefox option for headless mode
+
+*** Test Cases ***
+Example Headless Test
+    [Documentation]    Example of running test in headless mode with Firefox
+    Open Browser    about:blank    ${BROWSER}    options=${FIREFOX_OPTIONS}
+    Go To    https://www.example.com
+    # Other test steps
+    Close Browser
 
 
