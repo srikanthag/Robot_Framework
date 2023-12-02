@@ -1,0 +1,36 @@
+General Structure:
+Settings Section: Specifies configurations, libraries, and variables to be used throughout the test suite.
+Variables Section: Defines variables that can be used across test cases or suites.
+Test Cases Section: Contains test case definitions with steps and actions.
+Keywords Section: Holds reusable keywords or functions used within test cases.
+Essential Commands:
+Settings Commands:
+Library: Imports libraries or resources into the test suite for specific functionalities like Selenium, API testing, databases, etc.
+Resource: Includes external resource files (such as other Robot Framework files) within the current test suite.
+Variables: Sets test-specific variables.
+Test Case Commands:
+*** Test Cases ***: Defines the start of the test case section.
+[Tags]: Assigns tags to test cases for categorization or filtering.
+[Setup] / [Teardown]: Specifies setup and teardown actions for specific test cases.
+Test Case Name: Name of the test case.
+Log: Logs a message in the test report.
+Should Be Equal / Should Be True / Should Contain: Assertion keywords for verifying expected outcomes.
+Run Keyword If: Conditional execution based on a condition.
+For Loop: Iterates over a list or range of values.
+Keywords Commands:
+*** Keywords ***: Marks the start of the keywords section.
+Keyword Name: Defines a reusable keyword.
+[Arguments]: Specifies arguments for a keyword.
+Run Keyword: Executes another keyword within a keyword.
+Wait Until Keyword Succeeds: Waits for a keyword to pass or timeout.
+Run Keyword If: Conditional execution of a keyword based on a condition.
+SeleniumLibrary Commands (for web testing):
+Open Browser: Opens a new browser instance.
+Go To: Navigates to a specified URL.
+Click Element: Clicks on a web element.
+Input Text: Inputs text into a text field.
+Wait Until Element Is Visible: Waits until a specific element is visible.
+Built-in Variable and Flow Control Commands:
+${variable_name}: Declares and uses variables in Robot Framework.
+Run Keyword If: Executes a keyword conditionally based on a condition.
+For Loop: Iterates over a list or range of values.
