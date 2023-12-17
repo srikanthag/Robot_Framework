@@ -253,6 +253,7 @@ the UIAutomatorViewer is a tool you can use to inspect and analyze the UI compon
 23. YMAL file
 YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents. YAML is a popular programming language because it is designed to be easy to read and understand.3
 
+=================================================================================================
 
 24. Headless browser mode in Robot framework
 *** Settings ***
@@ -269,5 +270,19 @@ Example Headless Test
     Go To    https://www.example.com
     # Other test steps
     Close Browser
+
+=================================================================================================
+
+25. How do you run failed test cases in robot framework ?
+In Robot Framework, you can rerun failed test cases using the --rerunfailed option along with the --output and --log options to create files with the results of the failed test cases and then rerun them.
+
+=================================================================================================
+
+26. Markers in robot frameworks ?
+robot -i sanity -i smoke your_test_suite_directory
+robot -e skip your_test_suite_directory
+
+
+
 
 
