@@ -1,33 +1,27 @@
 1. What are the features of the robot framework
-** Tabular structure is used for test cases: The test cases in the Robot framework are defined in a simple tabular
-manner using keywords. A new developer may easily comprehend and write test cases.
+** Tabular structure is used for test cases: The test cases in the Robot framework are defined in a simple tabular manner using keywords. A new developer may easily comprehend and write test cases.
 
 ** Keywords: Built-in keywords are accessible with Robot Framework, as well as keywords from libraries such as
 the Selenium Library (open browser, close browser, maximize browser, etc.).
 
 ** We can also make user-defined keywords out of a mix of other user-defined keywords,
-built-in keywords, and library keywords. We can even pass parameters to such keywords,
-turning user-defined keywords into reusable functions.
+built-in keywords, and library keywords. We can even pass parameters to such keywords, turning user-defined keywords into reusable functions.
 
 ** Variables: Variables such as scalar, list, and dict are supported by the Robot framework.
 Variables in the robot framework are simple to utilize and come in handy when constructing complicated test cases.
 
 ** Libraries: External libraries such as SeleniumLibrary, DatabaseLibrary, FTPLibrary, and httpLibrary are all
-supported by the Robot framework. SeleniumLibrary is widely used because it allows users to interact
-with browsers and aids in web application and user interface testing.
+supported by the Robot framework. SeleniumLibrary is widely used because it allows users to interact with browsers and aids in web application and user interface testing.
 The Robot framework provides its own built-in libraries for strings, dates, and integers, among other things.
 
 ** Resources: Externally imported robot files with keywords can now be utilized with test cases thanks to the
-Robot Framework. The resources are simple to utilize and come in handy when we need to use keywords that
-have previously been written for other test projects.
+Robot Framework. The resources are simple to utilize and come in handy when we need to use keywords that have previously been written for other test projects.
 
 ** Test cases based on data: The Robot framework supports both keyword-driven and data-driven test scenarios.
-Data-driven testing uses a high-level keyword as a template for the test suite, and test cases are used to
-communicate data with the template's high-level keyword. It simplifies the process of testing user interfaces
+Data-driven testing uses a high-level keyword as a template for the test suite, and test cases are used to communicate data with the template's high-level keyword. It simplifies the process of testing user interfaces
 with various inputs.
 
-** Logs and Reports: In the form of reports and logs, the Robot framework offers all of the data of the test suite
-and test case execution. The log file contains all of the test case's execution details.
+** Logs and Reports: In the form of reports and logs, the Robot framework offers all the data of the test suite and test case execution. The log file contains all the test case's execution details.
 
 ===================================================================================================
 
@@ -77,24 +71,19 @@ Dict Variable
 
 5. What are the different types of test libraries in Robot Framework?
 
-* Built-in libraries: These are preconfigured libraries that are a part of the Robot Framework and offer keywords for
-typical activities like file manipulation, text manipulation, and HTTP requests.
-* Standard libraries: These third-party libraries are integrated with the Robot Framework and provide significant
-keywords for activities like database testing, GUI testing, and network testing.
+* Built-in libraries: These are preconfigured libraries that are a part of the Robot Framework and offer keywords for typical activities like file manipulation, text manipulation, and HTTP requests.
+* Standard libraries: These third-party libraries are integrated with the Robot Framework and provide significant keywords for activities like database testing, GUI testing, and network testing.
 * Custom libraries: These are created by the user and offer keywords for specific tasks or APIs.
 
 ==================================================================================================
 
 6. Explain the overall architecture of Robot Framework.
 
-* Test cases: These describe the expected behavior of the system being tested and are written in a tabular
-format using keywords.
+* Test cases: These describe the expected behavior of the system being tested and are written in a tabular format using keywords.
 * Test libraries: These offer the functionalities required to carry out operations on the system being tested.
 They can be created in any language that supports the Remote Library Interface, including Python, Java, and others.
-* Interpreter for the Robot Framework: This component interprets the test cases, runs the keywords,
-and interacts with the test libraries.
-* Test execution environment: This is the environment in which the test cases are run.
-It could be a local computer or a remote server.
+* Interpreter for the Robot Framework: This component interprets the test cases, runs the keywords, and interacts with the test libraries.
+* Test execution environment: This is the environment in which the test cases are run. It could be a local computer or a remote server.
 
 ==================================================================================================
 
