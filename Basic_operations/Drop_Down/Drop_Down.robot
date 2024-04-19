@@ -3,17 +3,29 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${browser}  chrome
-${url}  https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407
+${url}  https://demowebshop.tricentis.com/
 
 *** Test Cases ***
-Handling_dropdown              #Select only one element
-    open browser  ${url}    ${browser}
-    maximize browser window
-    select from list by index   RESULT_RadioButton-9     0
-    sleep  3
-    select from list by label    RESULT_RadioButton-9     Afternoon
-    sleep  3
-#    select from list by value
-    close browser
+Tc:01 Handling_dropdown
+    [Setup]  Open browser with URL
+    Select options from dropdown using Label, Index and Value
+    [Teardown]  Close Browser
+
 
 *** Keywords ***
+Open browser with URL
+    [Documentation]  Open browser with URL
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Sleep    5
+
+Select options from dropdown using Label, Index and Value
+    [Documentation]  Select options from dropdown using Label, Index and Value
+    Click Element   (//a[@href='/books'])[1]
+    sleep  3
+    Select From List By Label   products-orderby     Name: A to Z
+    sleep  3
+    Select From List By Index   products-orderby     3
+    sleep  3
+    Select From List By Value   products-orderby     https://demowebshop.tricentis.com/books?orderby=15
+    sleep  3

@@ -3,24 +3,36 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${browser}  chrome
-${url}  https://www.nopcommerce.com/en/login?returnUrl=%2Fen%2Fdemo
+${url}  https://demowebshop.tricentis.com/
+${Login}  xpath://a[@class='ico-login']
 
 *** Test Cases ***
-Testing_input_box
-    open browser  ${url}    ${browser}
-    maximize browser window
-    ${"Username"}   set variable  id:Username
-
-    element should be visible   ${"Username"}
-    element should be enabled   ${"Username"}
-
-    input text  ${"Username"}   srikanth@123.com
-    sleep  5
-
-    clear element text  ${"Username"}
-    sleep  3
-
-    close browser
+TC:01 Testing Input Box using admin credentials
+    [Tags]  Srikanth
+    [Documentation]  Testing Input Box
+    [setup]  Open browser with URL
+    Login to website using admin credentials
+    [Teardown]  Close Browser
 
 
 *** Keywords ***
+Open browser with URL
+    [Documentation]  Open browser with URL
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Sleep    5
+
+Login to website using admin credentials
+    [Documentation]  Login to website using admin credentials
+    Click Element  ${Login}
+    Sleep    2
+    Click Element  id:Email
+    Sleep    1
+    Input Text   id:Email    srikanth@gmail.com
+    Sleep    2
+    Click Element  id:Password
+    Sleep    1
+    Input Text   id:Password    1234
+    Sleep    2
+    Click Element  xpath://input[@class='button-1 login-button']
+    Sleep    2

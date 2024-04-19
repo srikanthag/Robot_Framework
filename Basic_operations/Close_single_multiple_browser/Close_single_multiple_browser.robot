@@ -16,7 +16,4 @@ close_browser
 
     close all browsers
 
-
-
-
 *** Keywords ***

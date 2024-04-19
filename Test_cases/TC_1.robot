@@ -12,11 +12,12 @@ Login test
     login_to_application
     close browser
 
+
 *** Keywords ***
 login_to_application
     input text  id:Username     srikanth@gmail.com
     input text  id:Password     123456
-    click element  xpath://input[@value='Log in']
+    click element  xpath://input[@class='ico-login']
 
 
 
