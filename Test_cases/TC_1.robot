@@ -1,23 +1,38 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Variables ***
-${browser}  chrome
-${url}  https://www.nopcommerce.com/en/login?returnUrl=%2Fen%2Fdemo
+#${browser}  chrome
+${url}  https://demowebshop.tricentis.com/
+${Login}  xpath://a[@class='ico-login']
 
 *** Test Cases ***
-Login test
-    open browser   ${url}   ${browser}
-    maximize browser window
-    login_to_application
-    close browser
+TC:01 Testing Input Box using admin credentials
+    [Tags]  Srikanth
+    [Documentation]  Testing Input Box
+    [setup]  Open browser with URL
+    Login to website using admin credentials
+    [Teardown]  Close Browser
 
 
 *** Keywords ***
-login_to_application
-    input text  id:Username     srikanth@gmail.com
-    input text  id:Password     123456
-    click element  xpath://input[@class='ico-login']
+Open browser with URL
+    [Documentation]  Open browser with URL
+    Open Browser    ${url}    browser=chrome    executable_path=C:/Program Files/Python312/Scripts/chromedriver.exe
+    Maximize Browser Window
+    Sleep    5
 
-
-
+Login to website using admin credentials
+    [Documentation]  Login to website using admin credentials
+    Click Element  ${Login}
+    Sleep    2
+    Click Element  id:Email
+    Sleep    1
+    Input Text   id:Email    srikanth@gmail.com
+    Sleep    2
+    Click Element  id:Password
+    Sleep    1
+    Input Text   id:Password    1234
+    Sleep    2
+    Click Element  xpath://input[@class='button-1 login-button']
+    Sleep    2

@@ -2,7 +2,7 @@
 Library     SeleniumLibrary
 
 *** Variables ***
-${browser}  chrome
+#${browser}  chrome
 ${url}  https://demowebshop.tricentis.com/
 ${Login}  xpath://a[@class='ico-login']
 
@@ -18,7 +18,7 @@ TC:01 Testing Input Box using admin credentials
 *** Keywords ***
 Open browser with URL
     [Documentation]  Open browser with URL
-    Open Browser    ${url}    ${browser}
+    Open Browser    ${url}    browser=chrome    executable_path=C:/Program Files/Python312/Scripts/chromedriver.exe
     Maximize Browser Window
     Sleep    5
 
