@@ -1,0 +1,88 @@
+Integrating Robot Framework with REST APIs involves using a library specifically designed to interact with RESTful web services. The most common library for this purpose is `RequestsLibrary`, which is built on top of the `requests` library. Here’s a step-by-step guide to integrating and using Robot Framework with REST APIs:
+
+1. Install Required Libraries
+
+First, you need to install Robot Framework and the `RequestsLibrary`. You can install these using pip:
+
+install requests
+Install robotframework-requests
+Install robotframework-jsonlibrary
+
+
+2. Create a Test Suite
+Create a test suite file with the `.robot` extension. For example, `api_tests.robot`.
+
+3. Import the Required Library
+In your `.robot` file, import the `RequestsLibrary` to use its keywords for interacting with REST APIs.
+*** Settings ***
+Library    RequestsLibrary
+
+4. Define Variables
+You can define variables for your API endpoints and other parameters.
+
+*** Variables ***
+${BASE_URL}    https://api.example.com
+${API_KEY}     your_api_key_here
+
+5. Write Test Cases
+Define test cases to interact with your API. Use the keywords provided by `RequestsLibrary` to perform HTTP requests.
+
+*** Test Cases ***
+Get User Info
+    [Documentation]    This test case retrieves user information from the API.
+    [Tags]    api
+    Create Session    my_api_session    ${BASE_URL}    headers=${AUTH_HEADER}
+    ${response}=    Get Request    my_api_session    /users/123
+    Should Be Equal As Numbers    ${response.status_code}    200
+    ${json_response}=    To Json    ${response.text}
+    Should Contain    ${json_response['username']}    johndoe
+
+6. Configure Headers
+If your API requires authentication or custom headers, you need to set those up. For example, to include an API key in the headers:
+
+*** Variables ***
+${AUTH_HEADER}    {"Authorization": "Bearer ${API_KEY}"}
+
+7. Run Your Tests
+You can run your test suite from the command line using:
+robot api_tests.robot
+
+
+8. Example Overview
+Here’s a complete example of a `.robot` file that tests a simple API:
+
+*** Settings ***
+Library    RequestsLibrary
+
+*** Variables ***
+${BASE_URL}    https://jsonplaceholder.typicode.com
+${AUTH_HEADER}    {"Authorization": "Bearer your_token"}
+
+*** Test Cases ***
+Get Post By ID
+    [Documentation]    Retrieve a post by its ID and verify the response.
+    Create Session    my_session    ${BASE_URL}
+    ${response}=    Get Request    my_session    /posts/1
+    Should Be Equal As Numbers    ${response.status_code}    200
+    ${json_response}=    To Json    ${response.text}
+    Should Contain    ${json_response['title']}    sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+
+Create New Post
+    [Documentation]    Create a new post and verify the response.
+    ${payload}=    Create Dictionary    title=foo    body=bar    userId=1
+    Create Session    my_session    ${BASE_URL}
+    ${response}=    Post Request    my_session    /posts    json=${payload}
+    Should Be Equal As Numbers    ${response.status_code}    201
+    ${json_response}=    To Json    ${response.text}
+    Should Contain    ${json_response['title']}    foo
+
+
+### Notes
+
+- **Sessions**: Use `Create Session` to create a session with base URL and headers, which helps in managing connections efficiently.
+- **Response Validation**: Use keywords like `Should Be Equal As Numbers` and `Should Contain` to validate response codes and content.
+- **Headers**: Modify headers as required for your API (e.g., for authentication).
+
+This setup allows you to create robust and reusable test cases for REST APIs using Robot Framework.
+
+

@@ -179,7 +179,7 @@ test in the suite
 
 ==================================================================================================
 
-17. What is test teardown in Robot Framework?
+17. What is the test teardown in Robot Framework?
 test teardown is executed after a test case
 
 ==================================================================================================
@@ -219,7 +219,7 @@ Another Test Case
 
 =================================================================================================
 
-19. What is test timeout in Robot Framework?
+19. What is the test timeout in Robot Framework?
 Robot Framework allows you to set timeouts both for test cases and user keywords, and if a test or keyword
 is not finished within the specified time, the keyword that is currently being executed is forcefully stopped.
 
@@ -230,7 +230,7 @@ is not finished within the specified time, the keyword that is currently being e
 =================================================================================================
 
 21. UIAutomatorViewer
-the UIAutomatorViewer is a tool you can use to inspect and analyze the UI components of an Android application. It is a graphic interface that allows you to see the app that's running and dissect the hierarchy of views so you can identify elements that can be interacted with it
+the UIAutomatorViewer is a tool you can use to inspect and analyze the UI components of an Android application. It is a graphic interface that allows you to see the app that's running and dissect the hierarchy of views, so you can identify elements that can be interacted with it
 
 =================================================================================================
 
@@ -240,7 +240,7 @@ the UIAutomatorViewer is a tool you can use to inspect and analyze the UI compon
 =================================================================================================
 
 23. YMAL file
-YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents. YAML is a popular programming language because it is designed to be easy to read and understand.3
+YAML stands for yet another markup language or YAML ain't markup language (a recursive acronym), which emphasizes that YAML is for data, not documents. YAML is a popular programming language because it is designed to be easy to read and understand.
 
 =================================================================================================
 

@@ -1,0 +1,45 @@
+1. ID
+Description: Unique identifier for an element.
+Usage: The most reliable and fastest method if the ID is unique on the page
+
+Click Element    id=submit-button
+
+2. Name
+Description: The name attribute of an element.
+Usage: Useful for form elements like text fields, radio buttons, and checkboxes.
+
+Input Text    name=username    my_username
+
+3. Class Name
+Description: The class attribute of an element. Can be used to identify multiple elements if they share the same class.
+Usage: Good for elements with a specific class. Can be less reliable if multiple elements share the same class.
+
+Click Element    class_name=submit-button
+
+
+4. Tag Name
+Description: The tag name of an element (e.g., input, button).
+Usage: Useful when you need to select elements based on their tag type. Less specific and often used with other locators.
+
+Click Element    tag_name=button
+
+5. XPath
+Description: A query language for selecting nodes from XML documents. Allows for complex queries and is very flexible.
+Usage: Useful for selecting elements based on complex criteria or when other locators are not sufficient.
+
+Click Element    xpath=//button[@id='submit']
+Input Text    xpath=//input[@name='username']    my_username
+
+6. CSS Selector
+Description: A selector that uses CSS syntax to find elements. Often more concise and faster than XPath.
+Usage: Good for selecting elements with complex hierarchies or styles.
+
+Click Element    css=.submit-button
+Input Text    css=input[name='username']    my_username
+
+7. Link Text / Partial Link Text
+Description: Used to locate a hyperlink by its visible text or partial text.
+Usage: Useful for links and buttons where the visible text is unique.
+
+Click Link    link_text=Submit
+Click Link    partial_link_text=Sub
