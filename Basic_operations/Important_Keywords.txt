@@ -1,6 +1,6 @@
 The SeleniumLibrary in Robot Framework provides a set of powerful keywords for web testing. Below are some of the most important and commonly used keywords from the SeleniumLibrary, along with examples of how they can be used:
 
-1. **Open Browser**
+1. Open Browser
 Opens a new browser instance.
 
 *** Test Cases ***
@@ -8,7 +8,7 @@ Open Google
     Open Browser    https://www.google.com    chrome
 
 
-2. **Close Browser**
+2. Close Browser
    Closes the currently open browser instance.
 
 *** Test Cases ***
@@ -16,7 +16,7 @@ Close Browser Example
     Open Browser    https://www.example.com    firefox
     Close Browser
 
-3. **Go To**
+3. Go To
 Navigates to a specified URL in the currently open browser.
 
 *** Test Cases ***
@@ -24,7 +24,7 @@ Go To Google
     Open Browser    https://www.example.com    chrome
     Go To    https://www.google.com
 
-4. **Click Element**
+4. Click Element
 Clicks on an element identified by its locator.
 
 *** Test Cases ***
@@ -32,7 +32,7 @@ Click Search Button
     Open Browser    https://www.example.com    chrome
     Click Element    xpath=//button[@id='search']
 
-5. **Input Text**
+5. Input Text
 Enters text into a text field identified by its locator.
 
 *** Test Cases ***
@@ -41,7 +41,7 @@ Search For Robot Framework
     Input Text    name=q    Robot Framework
     Click Element    name=btnK
 
-6. **Get Text**
+6. Get Text
 Retrieves the text content of an element.
 
 *** Test Cases ***
@@ -50,7 +50,7 @@ Get Welcome Message
     ${text}=    Get Text    xpath=//h1
     Log    ${text}
 
-7. **Page Should Contain**
+7. Page Should Contain
 Verifies that the page contains specific text.
 
 *** Test Cases ***
@@ -58,7 +58,7 @@ Verify Page Contains Example Text
     Open Browser    https://www.example.com    chrome
     Page Should Contain    Example Domain
 
-8. **Element Should Contain**
+8. Element Should Contain
 Checks if a specified element contains the given text.
 
 *** Test Cases ***
@@ -66,7 +66,7 @@ Verify Element Contains Text
     Open Browser    https://www.example.com    chrome
     Element Should Contain    xpath=//h1    Example Domain
 
-9. **Wait Until Element Is Visible**
+9. Wait Until Element Is Visible
 Waits until a specified element becomes visible.
 
 *** Test Cases ***
@@ -74,7 +74,7 @@ Wait For Element
     Open Browser    https://www.example.com    chrome
     Wait Until Element Is Visible    xpath=//button[@id='search']    10s
 
-10. **Select From List By Value**
+10. Select From List By Value
 Selects an option from a dropdown list by its value.
 
 *** Test Cases ***
@@ -82,7 +82,7 @@ Select Option From Dropdown
     Open Browser    https://www.example.com    chrome
     Select From List By Value    id=dropdown    option1
 
-11. **Switch To Frame**
+11. Switch To Frame
 Switches the context to a specified iframe.
 
 *** Test Cases ***
@@ -92,7 +92,7 @@ Switch To Frame
     Input Text    name=username    my_username
     Switch To Default Content
 
-12. **Execute JavaScript**
+12. Execute JavaScript
 Executes a JavaScript command in the context of the current page.
 
 *** Test Cases ***
@@ -100,7 +100,7 @@ Scroll Page
     Open Browser    https://www.example.com    chrome
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
 
-13. **Take Screenshot**
+13. Take Screenshot
 Takes a screenshot of the current page or a specific element.
 
 *** Test Cases ***
@@ -108,7 +108,7 @@ Screenshot Example
     Open Browser    https://www.example.com    chrome
     Take Screenshot
 
-14. **Element Should Be Visible**
+14. Element Should Be Visible
 Asserts that a specified element is visible on the page.
 
 *** Test Cases ***
@@ -116,7 +116,7 @@ Verify Element Is Visible
     Open Browser    https://www.example.com    chrome
     Element Should Be Visible    xpath=//h1
 
-15. **Submit Form**
+15. Submit Form
 Submits a form identified by its locator.
 
 *** Test Cases ***
@@ -126,8 +126,8 @@ Submit Login Form
     Input Text    name=password    my_password
     Submit Form    name=loginForm
 
-16. **Should Be Equal**
-Assert that two values are equal..
+16. Should Be Equal
+Assert that two values are equal.
 
 *** Test Cases ***
 Verify Page Title
@@ -135,9 +135,3 @@ Verify Page Title
     ${title}=    Get Title
     Should Be Equal    ${title}    Example Domain
     Close Browser
-
-
-
-
-
-
