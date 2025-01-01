@@ -39,7 +39,6 @@ Enter email address
     Input Text   ${add_email}    ${my_email}
     Sleep    1
 
-
 Enter password
     [Documentation]  Enter password
     Click Element  ${password}
@@ -53,8 +52,3 @@ Confirm password
     Sleep    1
     Input Text   ${confirm_password}    ${my_password}
     Sleep    1
-
-
-
-
-

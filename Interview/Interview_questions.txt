@@ -271,7 +271,10 @@ In Robot Framework, you can rerun failed test cases using the --rerunfailed opti
 robot -i sanity -i smoke your_test_suite_directory
 robot -e skip your_test_suite_directory
 
+=================================================================================================
 
-
-
+27. What are the log files generate inside the reports ?
+log.html
+output.html
+reports.html
 

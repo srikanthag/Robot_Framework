@@ -16,13 +16,3 @@ TC:001 Register user
     Click Element  ${confirm_register}
     Sleep    3
     Close Browser
-
-
-
-
-
-
-
-
-
-
