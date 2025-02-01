@@ -18,7 +18,7 @@ TC:01 Testing Input Box using admin credentials
 *** Keywords ***
 Open browser with URL
     [Documentation]  Open browser with URL
-    Open Browser    ${url}    browser=chrome    executable_path=C:/Program Files/Python312/Scripts/chromedriver.exe
+    Open Browser    ${url}    browser=chrome    executable_path=D:/IT/Robot_Framework/driver/chromedriver.exe
     Maximize Browser Window
     Sleep    5
 
